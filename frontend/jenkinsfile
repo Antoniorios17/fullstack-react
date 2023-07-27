@@ -10,6 +10,9 @@ pipeline {
         pip install -r requirements.txt
         export FLASK_APP=application
         flask run &
+        # update first stage to build react 
+        # update react version to run application
+        # update libraries
         '''
      }
    }
