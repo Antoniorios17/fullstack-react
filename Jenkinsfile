@@ -10,24 +10,26 @@ pipeline {
      }
    }
   }
-  stages {
-    stage ('test') {
-      steps {
-        sh '''#!/bin/bash
-        echo  "This is a test"
-        '''
-        
-     }
-   }
-  }
-  stages {
-    stage ('deploy') {
-      steps {
-        sh '''#!/bin/bash
-        echo  "This is a deployment"
-        '''
-        
-     }
-   }
-  }
+  agent any
+    stages {
+      stage ('test') {
+        steps {
+          sh '''#!/bin/bash
+          echo  "This is a test"
+          '''
+          
+      }
+    }
+    }
+   agent any
+    stages {
+      stage ('deploy') {
+        steps {
+          sh '''#!/bin/bash
+          echo  "This is a deployment"
+          '''
+          
+      }
+    }
+    }
 }
